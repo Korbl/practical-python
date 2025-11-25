@@ -1,0 +1,20 @@
+[project]
+name = "practical-python"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pytest>=9.0.1",
+    "pytest-mock>=3.15.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "Work"]
+testpaths = ["tests", "Work/*/tests"]
+norecursedirs = [".venv", "layers", "cdk.out"]
+markers = [
+       " slmdevelopment: marks tests that should only run on SLM Development environment",
+        "slmtest: marks tests that should only run on SLM Test environment",
+        "slmservices: marks tests that should only run on SLM Services environment (To skip run not slmservices)"
+        ]
