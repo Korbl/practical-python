@@ -327,9 +327,11 @@ like this:
 ```python
 # report.py
 
-import tableformat
+from porty import tableformat
 
 ...
+
+
 def portfolio_report(portfoliofile, pricefile):
     '''
     Make a stock report given portfolio and price data files.

@@ -2,11 +2,12 @@
 import os
 import time
 
-stocks = ['GOOG', 'APPL', 'IBM']
+stocks = ["GOOG", "APPL", "IBM"]
+
 
 def follow(filename):
     f = open(filename)
-    f.seek(0, os.SEEK_END) 
+    f.seek(0, os.SEEK_END)
     while True:
         line = f.readline()
         if line == "":
@@ -24,4 +25,3 @@ def follow(filename):
 #     if name in stocks:
 #         if change < 0:
 #             print(f'{name:>10s} {price:>10.2f} {change:>10.2f}')
-

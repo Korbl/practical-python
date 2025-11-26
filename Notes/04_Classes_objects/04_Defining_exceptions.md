@@ -41,14 +41,24 @@ a bad format name.
 For example:
 
 ```python
->>> from tableformat import create_formatter
->>> formatter = create_formatter('xls')
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "tableformat.py", line 71, in create_formatter
-    raise FormatError('Unknown table format %s' % name)
-FormatError: Unknown table format xls
->>>
+>> > from porty.tableformat import create_formatter
+>> > formatter = create_formatter('xls')
+Traceback(most
+recent
+call
+last):
+File
+"<stdin>", line
+1, in < module >
+File
+"tableformat.py", line
+71, in create_formatter
+raise FormatError('Unknown table format %s' % name)
+FormatError: Unknown
+table
+format
+xls
+>> >
 ```
 
 [Contents](../Contents.md) \| [Previous (4.3 Special methods)](03_Special_methods.md) \| [Next (5 Object Model)](../05_Object_model/00_Overview.md)

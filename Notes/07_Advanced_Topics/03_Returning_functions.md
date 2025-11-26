@@ -179,7 +179,8 @@ def typedproperty(name, expected_type):
 Now, try it out by defining a class like this:
 
 ```python
-from typedproperty import typedproperty
+from porty.typedproperty import typedproperty
+
 
 class Stock:
     name = typedproperty('name', str)

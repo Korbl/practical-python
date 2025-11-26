@@ -285,11 +285,15 @@ Try using the module to read some data:
 Try importing a function so that you don’t need to include the module name:
 
 ```python
->>> from fileparse import parse_csv
->>> portfolio = parse_csv('Data/portfolio.csv', select=['name','shares','price'], types=[str,int,float])
->>> portfolio
-... look at the output ...
->>>
+>> > from porty.fileparse import parse_csv
+>> > portfolio = parse_csv('Data/portfolio.csv', select=['name', 'shares', 'price'], types=[str, int, float])
+>> > portfolio
+...
+look
+at
+the
+output...
+>> >
 ```
 
 ### Exercise 3.12: Using your library module

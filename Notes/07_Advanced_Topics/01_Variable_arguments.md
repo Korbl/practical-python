@@ -213,13 +213,34 @@ def read_portfolio(filename, **opts):
 Once you've made the change, trying reading a file with some errors:
 
 ```python
->>> import report
->>> port = report.read_portfolio('Data/missing.csv')
-Row 4: Couldn't convert ['MSFT', '', '51.23']
-Row 4: Reason invalid literal for int() with base 10: ''
-Row 7: Couldn't convert ['IBM', '', '70.44']
-Row 7: Reason invalid literal for int() with base 10: ''
->>>
+>> >
+from porty import report
+>> > port = report.read_portfolio('Data/missing.csv')
+Row
+4: Couldn
+'t convert ['
+MSFT
+', '', '
+51.23
+']
+Row
+4: Reason
+invalid
+literal
+for int() with base 10: ''
+Row
+7: Couldn
+'t convert ['
+IBM
+', '', '
+70.44
+']
+Row
+7: Reason
+invalid
+literal
+for int() with base 10: ''
+>> >
 ```
 
 Now, try silencing the errors:

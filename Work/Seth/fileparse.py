@@ -5,14 +5,21 @@
 import csv
 from pathlib import Path
 
-def parse_csv(filename: Path, types: list, delimiter: str =",", has_headers=True,  select=None, silence_errors=True) -> list[dict] :
-    '''
+
+def parse_csv(
+    filename: Path,
+    types: list,
+    delimiter: str = ",",
+    has_headers=True,
+    select=None,
+    silence_errors=True,
+) -> list[dict]:
+    """
     Parse a CSV file into a list of records
-    '''
+    """
     indices = []
     with open(filename) as f:
-        rows = csv.reader(f,delimiter=delimiter)
-        
+        rows = csv.reader(f, delimiter=delimiter)
 
         # Read the file headers
         if has_headers:
@@ -29,12 +36,12 @@ def parse_csv(filename: Path, types: list, delimiter: str =",", has_headers=True
         records = []
         converted_row = []
         for row in rows:
-            if not row:    # Skip rows with no data
+            if not row:  # Skip rows with no data
                 continue
             # Filter the row if specific columns were selected
             if indices:
-                row = [ row[index] for index in indices ]
-            for func , val in zip(types, row):
+                row = [row[index] for index in indices]
+            for func, val in zip(types, row):
                 try:
                     converted_row.append(func(val))
                 except ValueError as e:

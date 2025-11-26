@@ -168,12 +168,14 @@ start by creating a function that reads a CSV file as you did above:
 ```python
 # ticker.py
 
-from follow import follow
+from porty.follow import follow
 import csv
+
 
 def parse_stock_data(lines):
     rows = csv.reader(lines)
     return rows
+
 
 if __name__ == '__main__':
     lines = follow('Data/stocklog.csv')
@@ -258,7 +260,9 @@ def filter_symbols(rows, names):
 Use this to filter stocks to just those in your portfolio:
 
 ```python
-import report
+
+from porty import report
+
 portfolio = report.read_portfolio('Data/portfolio.csv')
 rows = parse_stock_data(follow('Data/stocklog.csv'))
 rows = filter_symbols(rows, portfolio)
@@ -273,22 +277,28 @@ that creates a real-time stock ticker from a given portfolio, logfile,
 and table format.  For example::
 
 ```python
->>> from ticker import ticker
->>> ticker('Data/portfolio.csv', 'Data/stocklog.csv', 'txt')
-      Name      Price     Change
+>> > from porty.ticker import ticker
+>> > ticker('Data/portfolio.csv', 'Data/stocklog.csv', 'txt')
+Name
+Price
+Change
 ---------- ---------- ----------
-        GE      37.14      -0.18
-      MSFT      29.96      -0.09
-       CAT      78.03      -0.49
-        AA      39.34      -0.32
+GE
+37.14 - 0.18
+MSFT
+29.96 - 0.09
+CAT
+78.03 - 0.49
+AA
+39.34 - 0.32
 ...
 
->>> ticker('Data/portfolio.csv', 'Data/stocklog.csv', 'csv')
-Name,Price,Change
-IBM,102.79,-0.28
-CAT,78.04,-0.48
-AA,39.35,-0.31
-CAT,78.05,-0.47
+>> > ticker('Data/portfolio.csv', 'Data/stocklog.csv', 'csv')
+Name, Price, Change
+IBM, 102.79, -0.28
+CAT, 78.04, -0.48
+AA, 39.35, -0.31
+CAT, 78.05, -0.47
 ...
 ```
 
